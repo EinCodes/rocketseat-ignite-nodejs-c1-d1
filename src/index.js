@@ -54,8 +54,8 @@ app.post('/todos', checksExistsUserAccount, (request, response) => {
 
   const newTodo = {
     id: uuidv4(),
-    deadline: new Date(deadline),
-    created_at: new Date(),
+    deadline: new Date(deadline).toISOString(),
+    created_at: new Date().toISOString(),
     done: false,
     title,
   };
